@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smart AI Camera</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-image:url("https://wpblogassets.paytm.com/paytmblog/uploads/2022/01/21_Traffic-Fines_How-to-Check-and-Pay-Bangalore-Traffic-Fines-1-800x500.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+        h3 {
+            color: #4CAF50; /* Green color for the title */
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        select, input[type="text"], input[type="date"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50; /* Green background for buttons */
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 48%;
+            margin: 10px 1%;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+        .reset {
+            background-color: #f44336; /* Red background for reset */
+        }
+        .reset:hover {
+            background-color: #e53935; /* Darker red on hover */
+        }
+        a {
+            color: #2196F3; /* Blue color for links */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container">
+        <form autocomplete="off" method="post" name="google-sheet">
+            <h1>Smart AI Camera-Be A Part Of The Journey</h1>
+            <select name="Species">
+                <option value="NotSelected">Select Violation</option>
+                <option value="Oak">Speeding</option>
+                <option value="Pine">Run over red light</option>
+                <option value="Maple">No helmet</option>
+                <option value="Birch">Rash driving</option>
+                <option value="Cedar">Hit and run </option>
+                <option value="RedWood">No seatbelt for driver and co-driver</option>
+            </select>
+            <input type="text" placeholder="Please type the location of the violation" name="Location" required>
+            <input type="date" name="Date" required>
+         
+            <input type="text" placeholder="License Plate" name="ReportedBy" required>
+
+            <textarea rows="2" placeholder="Please list down any extra details?" name="Message"></textarea>
+            <h3 >
+                <p>To know more, visit our <a href="./kkkkkkk.html">Tree Info</a></p></h3>
+            <button type="submit" name="submit">Send</button>
+            <button type="reset" class="reset">Reset</button>
+        </form>
+    </div><center>
+    <iframe id="mapIframe" src="https://www.google.com/maps?q=banglore&output=embed" allowfullscreen="" loading="lazy" width="600px" hieght="600px"></iframe>
+    
+    >
+    </center>
+<h3 >
+    <p>To know more, visit our <a href="./Traffic Violation Information">Traffic Violation Information Page</a></p></h3>
+
+    <script>
+        const scriptURL = "https://script.google.com/macros/s/AKfycbyppW1376B7qrTlGN9vxXafgmgciujnKs1kSRfRuNf3Um7CgA_43h_h6_DTRqXF8GHpvQ/exec";
+        const form = document.forms['google-sheet'];
+      
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors'})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message));
+        });
+    </script>
+</body>
+</html>
